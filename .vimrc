@@ -1,3 +1,4 @@
+execute pathogen#infect()
 set ts=4
 set sw=4
 set ai
@@ -16,8 +17,9 @@ set backspace=2 " make backspace work like most other apps
 set foldmethod=indent
 
 
-execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
 autocmd vimenter * NERDTree
+autocmd vimenter * wincmd p
+
