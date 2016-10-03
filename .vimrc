@@ -9,6 +9,11 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'valloric/youcompleteme'
+"Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tomasr/molokai'
 
 call vundle#end()
 filetype plugin indent on
@@ -19,7 +24,7 @@ set ai
 set smarttab
 set smartindent
 set expandtab
-colorscheme ron
+"colorscheme ron
 syntax on
 set number
 
@@ -40,3 +45,20 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 syntax on
 "map <C-n>n :NERDTreeToggle<CR>
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+
+let g:airline#extensions#tabline#enabled = 1
+
+colorscheme molokai
+let g:molokai_original = 1
+"let g:rehash256 = 1
+
