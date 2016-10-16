@@ -14,7 +14,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tomasr/molokai'
-
+Plugin 'Conque-GDB'
 call vundle#end()
 filetype plugin indent on
 
@@ -43,6 +43,7 @@ autocmd vimenter * wincmd p
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 
+au BufRead,BufNewFile *.cu* set filetype=c
 syntax on
 "map <C-n>n :NERDTreeToggle<CR>
 
