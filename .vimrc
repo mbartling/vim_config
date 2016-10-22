@@ -15,6 +15,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tomasr/molokai'
 Plugin 'Conque-GDB'
+Plugin 'easymotion/vim-easymotion'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -35,6 +37,8 @@ set backspace=2 " make backspace work like most other apps
 
 set foldmethod=indent
 
+set cursorline
+set cursorcolumn
 
 " execute pathogen#infect()
 
@@ -62,4 +66,23 @@ let g:airline#extensions#tabline#enabled = 1
 colorscheme molokai
 let g:molokai_original = 1
 "let g:rehash256 = 1
+
+" Easy Motion Stuff
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Jump to anywhere you want with minimal keystrokes, with just one key
+" binding.
+" `s{char}{label}`
+nmap s <Plug>(easymotion-overwin-f)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
 
