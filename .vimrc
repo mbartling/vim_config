@@ -24,8 +24,8 @@ Plugin 'tpope/vim-abolish'
 call vundle#end()
 filetype plugin indent on
 
-set ts=4
-set sw=4
+set ts=2
+set sw=2
 set ai
 set smarttab
 set smartindent
@@ -43,6 +43,8 @@ set foldmethod=indent
 
 set cursorline
 set cursorcolumn
+set hlsearch
+set exrc
 
 " execute pathogen#infect()
 
@@ -61,7 +63,7 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 
@@ -121,5 +123,6 @@ map <Leader>k <Plug>(easymotion-k)
 
 nmap <F8> :TagbarToggle<CR>
 set tags=./tags;,tags;
+
 
 
