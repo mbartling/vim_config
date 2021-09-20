@@ -20,6 +20,8 @@ Plugin 'majutsushi/tagbar'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'tpope/vim-abolish'
+" Add YCM repository to plugin list
+Plugin 'ycm-core/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
@@ -43,8 +45,6 @@ set foldmethod=indent
 
 set cursorline
 set cursorcolumn
-set hlsearch
-set exrc
 
 " execute pathogen#infect()
 
@@ -63,8 +63,11 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers=['flake8']
+let g:syntastic_python_flake8_args='--ignore=E501,E225,W504'
+
 
 
 let g:airline#extensions#tabline#enabled = 1
@@ -72,6 +75,9 @@ let g:airline#extensions#tabline#enabled = 1
 colorscheme molokai
 let g:molokai_original = 1
 "let g:rehash256 = 1
+
+" Autoload Tagbar
+autocmd FileType python,c,cpp TagbarOpen
 
 " Easy Motion Stuff
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
@@ -125,4 +131,8 @@ nmap <F8> :TagbarToggle<CR>
 set tags=./tags;,tags;
 
 
+map <c-i> :vertical resize -10<CR>
+map <c-o> :vertical resize +10<CR>
+map <c-k> :resize -10<CR>
+map <c-l> :resize +10<CR>
 
