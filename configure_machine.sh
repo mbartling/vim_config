@@ -20,6 +20,7 @@ if [[ "${machine}" == "Mac" ]]; then
   sudo chown -R $(whoami) /usr/local/share
   alias python="python3"
   brew install vim 
+  brew install git
 fi
 echo "Installing Oh my ZSH"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
