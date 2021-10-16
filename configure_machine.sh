@@ -15,7 +15,11 @@ if [[ "${machine}" == "Mac" ]]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   echo "Installing Homebrew (Complete)"
   echo "Installing vim"
-  brew install vim
+  brew install python3
+  echo "Changing ownership of homebrew share"
+  sudo chown -R $(whoami) /usr/local/share
+  alias python="python3"
+  brew install vim 
 fi
 echo "Installing Oh my ZSH"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -26,3 +30,4 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugi
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 echo "Copying .zshrc"
 cp .zshrc ~
+sh configure_vim.sh
