@@ -21,6 +21,7 @@ if [[ "${machine}" == "Mac" ]]; then
   alias python="python3"
   brew install vim 
   brew install git
+  brew install ctags
 fi
 echo "Installing Oh my ZSH"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
